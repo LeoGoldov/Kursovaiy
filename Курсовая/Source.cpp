@@ -86,3 +86,27 @@ void show() {
         cout << "----------------------------------" << endl;
     }
 }
+
+//Загрузка файлов
+void loadfromfile() {
+    ifstream file("candidates.txt");
+    if (!file) {
+        cout << "Файл не найден, будет создан новый." << endl;
+        return;
+    }
+
+   
+    file >> candidates_count;
+    file.ignore(); 
+
+    // Считываем данные каждого кандидата
+    for (int i = 0; i < candidates_count; i++) {
+        getline(file, candidates[i].name);
+        getline(file, candidates[i].data);
+        getline(file, candidates[i].born);
+        file >> candidates[i].popularity;
+        file.ignore(); 
+    }
+
+    cout << "Данные загружены из файла candidates.txt" << endl;
+}

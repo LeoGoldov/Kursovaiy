@@ -76,6 +76,9 @@ void show() {
         cout << "Список кандидатов пуст:" << endl;
         return;
     }
+
+    sortCandidates();
+
     cout << "Список кандидатов (по популярности):" << endl;
     cout << "----------------------------------" << endl;
     for (int i = 0; i < candidates_count; i++) {
@@ -108,5 +111,14 @@ void loadfromfile() {
         file.ignore(); 
     }
 
+    sortCandidates();
+
     cout << "Данные загружены из файла candidates.txt" << endl;
+}
+// Сортировка кандидатов по популярности
+void sortCandidates() {
+    sort(candidates, candidates + candidates_count,
+        [](const Candidate& a, const Candidate& b) {
+            return a.popularity > b.popularity;
+        });
 }

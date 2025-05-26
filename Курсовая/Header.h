@@ -39,7 +39,7 @@ public:
 void addcandidate();
 void deletecandidate();
 void show();
-void savetofile();    // Новая функция для сохранения в файл
-void loadfromfile();  // Новая функция для загрузки из файла
-
+void savetofile();    
+void loadfromfile();
+void sortCandidates();
 #endif

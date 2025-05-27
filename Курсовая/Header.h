@@ -11,7 +11,7 @@
 using namespace std;
 
 const int MAX_CANDIDATES = 100;
-// Базовый класс с основной информацией
+//класс с основной информацией
 class BaseCandidate {
 public:
     string name;

@@ -5,10 +5,7 @@ int candidates_count = 0;
 
 //Добавление кандидатов
 void addcandidate() {
-    if (candidates_count >= MAX_CANDIDATES) {
-        cout << "Достигнуто максимальное количество кандидатов!\n";
-        return;
-    }
+   
     cout << "Введите имя кандидата: ";
     cin >> candidates[candidates_count].name;
     cout << "Введите дату рождения кандидата: ";
@@ -33,11 +30,7 @@ void addcandidate() {
 //Сохранение кандидатов
 void savetofile() {
     ofstream file("candidates.txt");
-    if (!file) {
-        cout << "Ошибка при создании файла!" << endl;
-        return;
-    }
-
+    
     // Записываем количество кандидатов
     file << candidates_count << endl;
 
